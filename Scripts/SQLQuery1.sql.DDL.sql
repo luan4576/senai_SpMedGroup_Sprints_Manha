@@ -51,10 +51,10 @@ CREATE TABLE Prontuarios(
 		NomePaciente VARCHAR (200),
 		RG CHAR (10) UNIQUE,
 		CPF CHAR (11) UNIQUE,
-		Endereco VARCHAR (200),
 		DataNascimento DATE ,
 		Telefone VARCHAR (200),
-		IdUsuario INT FOREIGN KEY REFERENCES Usuarios(IdUsuario)
+		IdUsuario INT FOREIGN KEY REFERENCES Usuarios(IdUsuario),
+		IdEndereco INT FOREIGN KEY REFERENCES Enderecos (IdEndereco)
 		);
 
 CREATE TABLE Medicos(
@@ -73,3 +73,6 @@ CREATE TABLE Medicos(
 		IdMedico INT FOREIGN KEY REFERENCES Medicos (IdMedico),
 		IdSituacao INT FOREIGN KEY REFERENCES Situacoes (IdSituacao)
 		);
+
+
+
